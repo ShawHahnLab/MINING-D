@@ -1,6 +1,6 @@
 # https://docs.conda.io/projects/conda-build/en/latest/resources/define-metadata.html
 {% set version = "0.0.1" %}
-{% set build = "0" %}
+{% set build = "1" %}
 
 package:
   name: mining-d
@@ -17,6 +17,7 @@ source:
 
 build:
   number: {{ build }}
+  script: mkdir -p $PREFIX/bin && install MINING_D.py $PREFIX/bin/
 
 requirements:
   run:
